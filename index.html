@@ -435,52 +435,65 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-			document.addEventListener("DOMContentLoaded", function () {
-			const form = document.querySelector("#contact-form");
-			const submitBtn = document.querySelector("#submit-btn");
-			const btnText = document.querySelector("#btn-text");
-			const btnSpinner = document.querySelector("#btn-spinner");
+			document.querySelector("#contact-form").addEventListener("submit", async function (e) {
+			e.preventDefault();
 
-			if (!form) {
-				console.error("❌ contact-form not found.");
-				return;
-			}
+			const name = document.querySelector("#name").value;
+			const email = document.querySelector("#email").value;
+			const message = document.querySelector("#message").value;
 
-			form.addEventListener("submit", async function (e) {
-				e.preventDefault();
-
-				// Show spinner in button
-				btnText.style.display = "none";
-				btnSpinner.style.display = "inline-block";
-
-				try {
+			try {
 				const res = await fetch("https://contact-backend-x6o7.onrender.com/contact", {
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({
-					name: document.querySelector("#name").value,
-					email: document.querySelector("#email").value,
-					message: document.querySelector("#message").value
-					})
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ name, email, message })
 				});
 
-				btnText.style.display = "inline";
-				btnSpinner.style.display = "none";
+				if (res.ok) {
+				alert("✅ Message sent successfully!");
+				document.querySelector("#contact-form").reset();
+				} else {
+				alert("❌ Failed to send message. Please try again.");
+				}
+			} catch (err) {
+				console.error("Submission failed", err);
+				alert("❌ Something went wrong. Try again later.");
+			}
+			});
+			</script>
+			<script>
+			document.querySelector("#contact-form").addEventListener("submit", async function (e) {
+			e.preventDefault();
+
+			const name = document.querySelector("#name").value;
+			const email = document.querySelector("#email").value;
+			const message = document.querySelector("#message").value;
+
+			// Show spinner and hide popup
+			document.getElementById("loading-spinner").style.display = "block";
+			document.getElementById("thank-you-popup").style.display = "none";
+
+			try {
+				const res = await fetch("https://contact-backend-x6o7.onrender.com/contact", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ name, email, message })
+				});
+
+				// Hide spinner
+				document.getElementById("loading-spinner").style.display = "none";
 
 				if (res.ok) {
-					form.reset();
-					form.classList.add("success");
-					setTimeout(() => form.classList.remove("success"), 2000);
-					console.log("✅ Message sent.");
+				document.getElementById("contact-form").reset();
+				document.getElementById("thank-you-popup").style.display = "block";
 				} else {
-					console.log("❌ Failed to send message.");
+				alert("❌ Something went wrong. Please try again.");
 				}
-				} catch (err) {
-				btnText.style.display = "inline";
-				btnSpinner.style.display = "none";
-				console.error("❌ Network error:", err);
-				}
-			});
+			} catch (err) {
+				document.getElementById("loading-spinner").style.display = "none";
+				alert("❌ Error connecting to server.");
+				console.error(err);
+			}
 			});
 			</script>
 
