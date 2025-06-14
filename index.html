@@ -122,25 +122,25 @@
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
+								<form method="POST" action="https://contact-backend-x6o7.onrender.com/contact" id="contact-form">
+								<div class="fields">
+									<div class="field half">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" required />
 									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
+									<div class="field half">
+									<label for="email">Email</label>
+									<input type="email" name="email" id="email" required />
+									</div>
+									<div class="field">
+									<label for="message">Message</label>
+									<textarea name="message" id="message" rows="4" required></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" /></li>
+									<li><input type="reset" value="Reset" /></li>
+								</ul>
 								</form>
 								<ul class="icons">
 								<li><a href="https://linkedin.com/in/parag-ghosh" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
@@ -425,6 +425,34 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+			document.querySelector("#contact-form").addEventListener("submit", async function (e) {
+			e.preventDefault();
+
+			const name = document.querySelector("#name").value;
+			const email = document.querySelector("#email").value;
+			const message = document.querySelector("#message").value;
+
+			try {
+				const res = await fetch("https://contact-backend-x6o7.onrender.com/contact", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ name, email, message })
+				});
+
+				if (res.ok) {
+				alert("✅ Message sent successfully!");
+				document.querySelector("#contact-form").reset();
+				} else {
+				alert("❌ Failed to send message. Please try again.");
+				}
+			} catch (err) {
+				console.error("Submission failed", err);
+				alert("❌ Something went wrong. Try again later.");
+			}
+			});
+			</script>
+
 
 	</body>
 </html>
