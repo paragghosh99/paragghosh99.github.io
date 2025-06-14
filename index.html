@@ -142,6 +142,15 @@
 									<li><input type="reset" value="Reset" /></li>
 								</ul>
 								</form>
+								<!-- Loading Spinner -->
+								<div id="loading-spinner" style="display:none; text-align:center; margin-top:1em;">
+								<img src="https://i.gifer.com/ZZ5H.gif" alt="Sending..." width="50" />
+								</div>
+
+								<!-- Thank You Popup -->
+								<div id="thank-you-popup" style="display:none; text-align:center; color:green; font-weight:bold; margin-top:1em;">
+								✅ Thank you! Your message has been sent.
+								</div>
 								<ul class="icons">
 								<li><a href="https://linkedin.com/in/parag-ghosh" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
 								<li><a href="https://github.com/paragghosh99" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
@@ -452,7 +461,41 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			}
 			});
 			</script>
+			<script>
+			document.querySelector("#contact-form").addEventListener("submit", async function (e) {
+			e.preventDefault();
 
+			const name = document.querySelector("#name").value;
+			const email = document.querySelector("#email").value;
+			const message = document.querySelector("#message").value;
+
+			// Show spinner and hide popup
+			document.getElementById("loading-spinner").style.display = "block";
+			document.getElementById("thank-you-popup").style.display = "none";
+
+			try {
+				const res = await fetch("https://contact-backend-x6o7.onrender.com/contact", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ name, email, message })
+				});
+
+				// Hide spinner
+				document.getElementById("loading-spinner").style.display = "none";
+
+				if (res.ok) {
+				document.getElementById("contact-form").reset();
+				document.getElementById("thank-you-popup").style.display = "block";
+				} else {
+				alert("❌ Something went wrong. Please try again.");
+				}
+			} catch (err) {
+				document.getElementById("loading-spinner").style.display = "none";
+				alert("❌ Error connecting to server.");
+				console.error(err);
+			}
+			});
+			</script>
 
 	</body>
 </html>
