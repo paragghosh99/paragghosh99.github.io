@@ -435,46 +435,52 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-			document.querySelector("#contact-form").addEventListener("submit", async function (e) {
-			e.preventDefault();
-
+			document.addEventListener("DOMContentLoaded", function () {
 			const form = document.querySelector("#contact-form");
 			const submitBtn = document.querySelector("#submit-btn");
 			const btnText = document.querySelector("#btn-text");
 			const btnSpinner = document.querySelector("#btn-spinner");
 
-			// Show loading spinner in button
-			btnText.style.display = "none";
-			btnSpinner.style.display = "inline-block";
+			if (!form) {
+				console.error("❌ contact-form not found.");
+				return;
+			}
 
-			try {
+			form.addEventListener("submit", async function (e) {
+				e.preventDefault();
+
+				// Show spinner in button
+				btnText.style.display = "none";
+				btnSpinner.style.display = "inline-block";
+
+				try {
 				const res = await fetch("https://contact-backend-x6o7.onrender.com/contact", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
 					name: document.querySelector("#name").value,
 					email: document.querySelector("#email").value,
 					message: document.querySelector("#message").value
-				})
+					})
 				});
 
-				// Hide spinner
 				btnText.style.display = "inline";
 				btnSpinner.style.display = "none";
 
 				if (res.ok) {
-				form.reset();
-				form.classList.add("success");
-				setTimeout(() => form.classList.remove("success"), 2000);
-				console.log("✅ Message sent.");
+					form.reset();
+					form.classList.add("success");
+					setTimeout(() => form.classList.remove("success"), 2000);
+					console.log("✅ Message sent.");
 				} else {
-				console.log("❌ Failed to send message.");
+					console.log("❌ Failed to send message.");
 				}
-			} catch (err) {
+				} catch (err) {
 				btnText.style.display = "inline";
 				btnSpinner.style.display = "none";
 				console.error("❌ Network error:", err);
-			}
+				}
+			});
 			});
 			</script>
 
