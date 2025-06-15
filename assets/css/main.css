@@ -1691,8 +1691,8 @@ input, select, textarea {
 		font-weight: 500;
 		}
 
-		@media screen and (max-width: 736px) {
+		/* @media screen and (max-width: 736px) {
 		#bg:before {
 			background-position: left top !important;
 		}
-		}
+		} */
