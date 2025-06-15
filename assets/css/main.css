@@ -1684,3 +1684,9 @@ input, select, textarea {
 		body.is-article-visible #bg:before {
 		filter: blur(8px) brightness(0.85);
 		}
+
+		#contact-response {
+		font-size: 0.9rem;
+		color: #4caf50;
+		font-weight: 500;
+		}
