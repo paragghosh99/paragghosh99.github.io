@@ -136,6 +136,9 @@
 									<label for="message">Message</label>
 									<textarea name="message" id="message" rows="4" required></textarea>
 									</div>
+									<div class="field">
+									<div id="contact-response"></div>
+									</div>
 								</div>
 								<ul class="actions">
 									<li>
@@ -480,8 +483,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				btnSpinner.style.display = "none";
 
 				if (res.ok) {
-					form.reset();
-					btnText.textContent = "Sent ✅";
+				form.reset();
+				btnText.textContent = "Sent";
+				document.getElementById("contact-response").textContent = "Your message has been sent successfully.";
 				} else {
 					btnText.textContent = "Try Again ❌";
 				}
