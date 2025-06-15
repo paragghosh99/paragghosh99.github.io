@@ -1690,3 +1690,9 @@ input, select, textarea {
 		color: #4caf50;
 		font-weight: 500;
 		}
+
+		@media screen and (max-width: 736px) {
+		#bg:before {
+			background-position: left top !important;
+		}
+		}
