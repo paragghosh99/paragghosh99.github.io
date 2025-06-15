@@ -453,16 +453,17 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				return;
 			}
 
-			let isSubmitting = false; // ✅ Prevent double submit
+			let isSubmitting = false;
 
 			form.addEventListener("submit", async function (e) {
 				e.preventDefault();
-
-				if (isSubmitting) return; // ✅ Guard against double-click
+				if (isSubmitting) return;
 				isSubmitting = true;
 
+				// Show spinner, hide text
 				btnText.style.display = "none";
 				btnSpinner.style.display = "inline-block";
+				submitBtn.disabled = true;
 
 				try {
 				const res = await fetch("https://contact-backend-x6o7.onrender.com/contact", {
@@ -475,24 +476,28 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					})
 				});
 
-				btnText.style.display = "inline";
+				// Hide spinner
 				btnSpinner.style.display = "none";
-				isSubmitting = false;
 
 				if (res.ok) {
 					form.reset();
-					form.classList.add("success");
-					setTimeout(() => form.classList.remove("success"), 2000);
-					console.log("✅ Message sent.");
+					btnText.textContent = "Sent ✅";
 				} else {
-					console.log("❌ Failed to send message.");
+					btnText.textContent = "Try Again ❌";
 				}
 				} catch (err) {
-				btnText.style.display = "inline";
 				btnSpinner.style.display = "none";
-				isSubmitting = false;
+				btnText.textContent = "Error ❌";
 				console.error("❌ Network error:", err);
 				}
+
+				// Show text, re-enable after 2 seconds
+				btnText.style.display = "inline";
+				setTimeout(() => {
+				btnText.textContent = "Send Message";
+				submitBtn.disabled = false;
+				isSubmitting = false;
+				}, 2000);
 			});
 			});
 			</script>
