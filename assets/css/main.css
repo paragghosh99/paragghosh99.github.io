@@ -1131,22 +1131,25 @@ input, select, textarea {
 		}
 
 		#bg:before {
-			-moz-transition: background-color 2.5s ease-in-out;
-			-webkit-transition: background-color 2.5s ease-in-out;
-			-ms-transition: background-color 2.5s ease-in-out;
-			transition: background-color 2.5s ease-in-out;
-			-moz-transition-delay: 0.75s;
-			-webkit-transition-delay: 0.75s;
-			-ms-transition-delay: 0.75s;
-			transition-delay: 0.75s;
-			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/home-bg.jpg");
-			background-size: cover;
-			background-position: center,
- center;
-			background-repeat: no-repeat,
- repeat;
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
 			z-index: 2;
-		}
+			background-image: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../images/home-bg.jpg");
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+
+			/* fix white border on blur */
+			transform: scale(1.1); /* enlarges it slightly beyond screen */
+			transform-origin: center center;
+			filter: none;
+			transition: filter 0.5s ease;
+			pointer-events: none; /* prevents blocking content */
+			}
 
 		#bg:after {
 			-moz-transform: scale(1.125);
@@ -1670,4 +1673,14 @@ input, select, textarea {
 		0% { box-shadow: 0 0 0px #00cc66; }
 		50% { box-shadow: 0 0 10px #00cc66; }
 		100% { box-shadow: 0 0 0px #00cc66; }
+		}
+
+		/* Blur background when in a section */
+		body.is-preload #bg:before,
+		body.is-transitioning #bg:before {
+		filter: none;
+		}
+
+		body.is-article-visible #bg:before {
+		filter: blur(8px) brightness(0.85);
 		}
