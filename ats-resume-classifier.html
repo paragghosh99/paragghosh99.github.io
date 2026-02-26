@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATS Resume Classifier · Parag Ghosh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="project-page project-tier-2">
+
+<header class="nav scrolled">
+  <div class="nav-left">
+    <a href="index.html#work">work</a>
+    <a href="index.html#about">about</a>
+    <a href="index.html#contact">contact</a>
+  </div>
+  <div class="nav-center">
+    <a href="index.html" class="logo">Parag Ghosh</a>
+  </div>
+  <div class="nav-right">
+    <a href="https://github.com/paragghosh99" target="_blank">github</a>
+    <a href="https://www.linkedin.com/in/parag-ghosh/" target="_blank">linkedin</a>
+  </div>
+</header>
+
+<section class="project-hero">
+  <div class="container">
+    <h1>ATS Resume Classifier</h1>
+    <p class="project-subtitle">
+      NLP-driven resume classification system using TF-IDF vectorization and supervised learning.
+    </p>
+
+    <div class="project-metrics">
+      <div class="project-metric-item">
+        <strong>92%</strong>
+        <span>Classification Accuracy</span>
+      </div>
+      <div class="project-metric-divider"></div>
+      <div class="project-metric-item">
+        <strong>Multi-Class</strong>
+        <span>Job Role Prediction</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="project-section">
+  <div class="container">
+    <h2>Context</h2>
+    <p>
+      Recruiters often process large volumes of resumes. Automating initial categorization improves efficiency and consistency in candidate screening.
+    </p>
+  </div>
+</section>
+
+<section class="project-section">
+  <div class="container">
+    <h2>Architecture</h2>
+    <div class="project-arch-grid">
+      <div class="project-arch-card"><h4>Resume Input</h4><p>Raw text extracted from resume documents.</p></div>
+      <div class="project-arch-card"><h4>Preprocessing</h4><p>Cleaning, tokenization, normalization.</p></div>
+      <div class="project-arch-card"><h4>Vectorization</h4><p>TF-IDF feature extraction.</p></div>
+      <div class="project-arch-card"><h4>Model</h4><p>Supervised classifier for role prediction.</p></div>
+      <div class="project-arch-card"><h4>Output</h4><p>Predicted job category with probability.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="project-section project-depth">
+  <div class="container">
+    <h2>Engineering Decisions</h2>
+    <ul>
+      <li>TF-IDF chosen for interpretability and lightweight deployment.</li>
+      <li>Handled class imbalance through data normalization.</li>
+      <li>Focused on explainability over deep model complexity.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="project-section">
+  <div class="container">
+    <h2>Tech Stack</h2>
+    <div class="project-tech-grid">
+      <div class="project-tech-pill">Python</div>
+      <div class="project-tech-pill">Scikit-learn</div>
+      <div class="project-tech-pill">NLP</div>
+      <div class="project-tech-pill">TF-IDF</div>
+    </div>
+  </div>
+</section>
+
+<div class="project-links">
+  <a href="#" class="rag-btn rag-btn-primary">Live Demo</a>
+  <a href="#" class="rag-btn rag-btn-secondary">View Source</a>
+</div>
+
+<footer class="footer">
+  <div class="container"><div class="footer-inner"><p class="footer-meta">© 2026 · Built with intention.</p></div></div>
+</footer>
+
+</body>
+</html>

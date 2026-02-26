@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task API App · Parag Ghosh</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="project-page project-tier-2">
+
+<header class="nav scrolled">
+  <div class="nav-left">
+    <a href="index.html#work">work</a>
+    <a href="index.html#about">about</a>
+    <a href="index.html#contact">contact</a>
+  </div>
+
+  <div class="nav-center">
+    <a href="index.html" class="logo">Parag Ghosh</a>
+  </div>
+
+  <div class="nav-right">
+    <a href="https://github.com/paragghosh99" target="_blank">github</a>
+    <a href="https://www.linkedin.com/in/parag-ghosh/" target="_blank">linkedin</a>
+  </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="project-hero">
+  <div class="container">
+
+    <h1>Task API App</h1>
+
+    <p class="project-subtitle">
+      Production-ready FastAPI backend with JWT authentication,
+      Dockerized deployment, and CI-validated builds.
+    </p>
+
+    <div class="project-metrics">
+      <div class="project-metric-item">
+        <strong>CI</strong>
+        <span>Validated on Every Push</span>
+      </div>
+
+      <div class="project-metric-divider"></div>
+
+      <div class="project-metric-item">
+        <strong>Docker</strong>
+        <span>Reproducible Builds</span>
+      </div>
+
+      <div class="project-metric-divider"></div>
+
+      <div class="project-metric-item">
+        <strong>Live</strong>
+        <span>Deployed on Render</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CONTEXT -->
+
+<section class="project-section">
+  <div class="container">
+
+    <h2>Context</h2>
+
+    <p>
+      Writing CRUD endpoints is easy. Ensuring the same backend runs
+      reliably across local development, Docker containers, CI pipelines,
+      and cloud deployment is where engineering discipline begins.
+    </p>
+
+    <p>
+      This project focuses on production fundamentals: authentication,
+      containerization, automated validation, and real deployment constraints.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ARCHITECTURE -->
+
+<section class="project-section">
+  <div class="container">
+
+    <h2>Architecture</h2>
+
+    <div class="project-arch-grid">
+
+      <div class="project-arch-card">
+        <h4>Client</h4>
+        <p>Sends authenticated requests using Bearer JWT tokens.</p>
+      </div>
+
+      <div class="project-arch-card">
+        <h4>FastAPI Layer</h4>
+        <p>RESTful endpoints with dependency injection and validation.</p>
+      </div>
+
+      <div class="project-arch-card">
+        <h4>Auth System</h4>
+        <p>
+          JWT-based authentication.
+          Token contains <code>sub</code> (user id) and <code>exp</code> (expiry).
+        </p>
+      </div>
+
+      <div class="project-arch-card">
+        <h4>Database</h4>
+        <p>SQLite with SQLAlchemy ORM for persistence.</p>
+      </div>
+
+      <div class="project-arch-card">
+        <h4>Container Layer</h4>
+        <p>
+          Docker image ensures consistent runtime across environments.
+        </p>
+      </div>
+
+      <div class="project-arch-card">
+        <h4>CI Pipeline</h4>
+        <p>
+          GitHub Actions builds Docker image on every push.
+          Broken builds never deploy.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ENGINEERING DECISIONS -->
+
+<section class="project-section project-depth">
+  <div class="container">
+
+    <h2>Engineering Decisions</h2>
+
+    <ul>
+      <li>
+        <strong>JWT over Session Storage:</strong>
+        Stateless authentication simplifies scaling and removes server-side session dependency.
+      </li>
+
+      <li>
+        <strong>Dockerized Workflow:</strong>
+        Eliminates “works on my machine” discrepancies by standardizing environment.
+      </li>
+
+      <li>
+        <strong>SQLite Inside Container:</strong>
+        Redeploy = fresh container = fresh DB.
+        Intentional tradeoff for demo simplicity.
+      </li>
+
+      <li>
+        <strong>CI First:</strong>
+        Every push builds the Docker image from scratch, validating deployability.
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+
+<!-- RESULTS -->
+
+<section class="project-section project-results">
+  <div class="container">
+
+    <h2>Operational Results</h2>
+
+    <p>
+      ✔ Live and accessible via Swagger UI  
+      ✔ Docker image reproducible locally and in CI  
+      ✔ Authentication and CRUD integration tested with Pytest  
+      ✔ Deployment verified on Render cloud platform  
+    </p>
+
+  </div>
+</section>
+
+
+<!-- TECH STACK -->
+
+<section class="project-section">
+  <div class="container">
+
+    <h2>Tech Stack</h2>
+
+    <div class="project-tech-grid">
+      <div class="project-tech-pill">FastAPI</div>
+      <div class="project-tech-pill">JWT</div>
+      <div class="project-tech-pill">SQLAlchemy</div>
+      <div class="project-tech-pill">SQLite</div>
+      <div class="project-tech-pill">Docker</div>
+      <div class="project-tech-pill">GitHub Actions</div>
+      <div class="project-tech-pill">Render</div>
+      <div class="project-tech-pill">Pytest</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- LINKS -->
+
+<div class="project-links">
+
+  <a href="https://paragghosh99.github.io/task_app_auth_testing/" 
+     target="_blank" 
+     class="rag-btn rag-btn-primary">
+    Live API
+  </a>
+
+  <a href="https://github.com/paragghosh99/task_app_auth_testing" 
+     target="_blank" 
+     class="rag-btn rag-btn-secondary">
+    View Source
+  </a>
+
+</div>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-meta">© 2026 · Built with intention.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
