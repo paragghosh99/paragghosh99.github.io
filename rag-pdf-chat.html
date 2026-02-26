@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAG PDF Chat · Parag Ghosh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<header class="nav scrolled">
+  <div class="nav-left">
+    <a href="index.html#work">work</a>
+    <a href="index.html#about">about</a>
+    <a href="index.html#contact">contact</a>
+  </div>
+
+  <div class="nav-center">
+    <a href="index.html" class="logo">Parag Ghosh</a>
+  </div>
+
+  <div class="nav-right">
+    <a href="https://github.com/paragghosh99" target="_blank">github</a>
+    <a href="https://www.linkedin.com/in/parag-ghosh/" target="_blank">linkedin</a>
+  </div>
+</header>
+
+<!-- HERO TEXT -->
+<section class="project-hero">
+  <div class="container">
+    <h1>RAG PDF Chat</h1>
+    <p class="project-subtitle">
+      Scalable Retrieval-Augmented Generation platform for document-level question answering.
+    </p>
+
+    <div class="project-image-block">
+      <img src="assets/rag-hero.png"
+           alt="RAG PDF Chat Overview"
+           class="project-image-uniform">
+    </div>
+
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="project-content">
+  <div class="container">
+
+    <!-- HERO IMAGE
+    <div class="project-image-block">
+      <img src="assets/rag-hero.png"
+           alt="RAG PDF Chat Overview"
+           class="project-image-uniform">
+    </div> -->
+
+    <!-- SYSTEM ARCHITECTURE -->
+    <div class="project-section">
+      <h2>System Architecture</h2>
+      <p>
+        End-to-end Retrieval-Augmented Generation pipeline designed
+        for scalable, grounded document intelligence.
+      </p>
+    </div>
+
+    <div class="project-image-block">
+      <img src="assets/rag-architecture.png"
+           alt="RAG Architecture Diagram"
+           class="project-image-uniform">
+    </div>
+
+    <!-- PROBLEM -->
+    <div class="project-section">
+      <h2>Problem</h2>
+      <p>
+        LLMs hallucinate when answering questions about long-form documents.
+        Traditional keyword search fails to preserve semantic intent.
+      </p>
+    </div>
+
+    <!-- SOLUTION -->
+    <div class="project-section">
+      <h2>Solution</h2>
+      <p>
+        Designed a production-ready RAG system that ingests PDFs,
+        generates vector embeddings, performs similarity search,
+        and injects relevant context into LLM prompts to ensure grounded responses.
+      </p>
+    </div>
+
+    <!-- PIPELINE -->
+    <div class="project-section">
+      <h2>Pipeline Flow</h2>
+      <ul>
+        <li>PDF upload → async ingestion</li>
+        <li>Recursive chunking with overlap</li>
+        <li>Embedding generation (HuggingFace)</li>
+        <li>Chroma vector indexing</li>
+        <li>Top-k semantic retrieval</li>
+        <li>Context-aware prompt injection</li>
+        <li>Streaming response generation</li>
+      </ul>
+    </div>
+
+    <!-- ENGINEERING HIGHLIGHTS -->
+    <div class="project-section">
+      <h2>Engineering Highlights</h2>
+      <ul>
+        <li>Optimized chunk size for recall vs latency tradeoff</li>
+        <li>Reduced hallucination via metadata filtering</li>
+        <li>Stateless FastAPI layer for horizontal scaling</li>
+        <li>Dockerized for reproducible deployment</li>
+      </ul>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="project-links">
+      <a href="https://paragghosh99.github.io/rag_pdf_chat/" 
+         target="_blank" 
+         class="resume-btn">
+        Live Demo
+      </a>
+
+      <a href="https://github.com/paragghosh99/rag_pdf_chat" 
+         target="_blank" 
+         class="resume-btn" 
+         style="margin-left:16px; background:#374151;">
+        View Source
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-meta">© 2026 · Built with intention.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
