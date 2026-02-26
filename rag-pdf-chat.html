@@ -6,6 +6,7 @@
   <title>RAG PDF Chat · Parag Ghosh</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
@@ -27,110 +28,359 @@
 </header>
 
 <!-- HERO TEXT -->
-<section class="project-hero">
-  <div class="container">
-    <h1>RAG PDF Chat</h1>
-    <p class="project-subtitle">
-      Scalable Retrieval-Augmented Generation platform for document-level question answering.
-    </p>
+<section class="rag-hero">
+  <div class="container rag-hero-container">
 
-    <div class="project-image-block">
-      <img src="assets/rag-hero.png"
-           alt="RAG PDF Chat Overview"
-           class="project-image-uniform">
+    <div class="rag-hero-left">
+      <h1>
+        RAG <span class="rag-highlight">PDF</span> Chat
+      </h1>
+
+      <p class="rag-subtitle">
+        Modular Retrieval-Augmented Generation 
+        for Accurate Document Question Answering
+      </p>
+
+      <div class="rag-stats">
+        <div class="rag-stat">
+          <div class="rag-stat">
+            <svg viewBox="0 0 24 24" class="rag-icon">
+              <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
+              <path d="M14 2v6h6"/>
+            </svg>
+            <div><strong>20</strong> PDFs tested</div>
+          </div>
+        </div>
+
+        <div class="rag-divider"></div>
+
+        <div class="rag-stat">
+          <div class="rag-stat">
+            <svg viewBox="0 0 24 24" class="rag-icon">
+              <rect x="4" y="4" width="14" height="16" rx="2"/>
+              <line x1="8" y1="8" x2="16" y2="8"/>
+              <line x1="8" y1="12" x2="16" y2="12"/>
+              <line x1="8" y1="16" x2="14" y2="16"/>
+            </svg>
+            <div><strong>2–400</strong> pages</div>
+          </div>
+        </div>
+
+        <div class="rag-divider"></div>
+
+        <div class="rag-stat">
+          <div class="rag-stat">
+            <svg viewBox="0 0 24 24" class="rag-icon">
+              <ellipse cx="12" cy="5" rx="7" ry="3"/>
+              <path d="M5 5v6c0 1.7 3.1 3 7 3s7-1.3 7-3V5"/>
+              <path d="M5 11v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/>
+            </svg>
+            <div><strong>19s</strong> Indexing</div>
+          </div>
+        </div>
+
+        <div class="rag-divider"></div>
+
+        <div class="rag-stat">
+          <div class="rag-stat">
+          <svg viewBox="0 0 24 24" class="rag-icon">
+            <path d="M13 2L3 14h7l-1 8 10-12h-7z"/>
+          </svg>
+          <div><strong>9–14s</strong> Response</div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rag-hero-right">
+      <img src="assets/rag-hero.png" alt="RAG PDF UI">
     </div>
 
   </div>
 </section>
 
-<!-- MAIN CONTENT -->
-<section class="project-content">
+<section class="rag-problem-section">
   <div class="container">
 
-    <!-- HERO IMAGE
-    <div class="project-image-block">
-      <img src="assets/rag-hero.png"
-           alt="RAG PDF Chat Overview"
-           class="project-image-uniform">
-    </div> -->
-
-    <!-- SYSTEM ARCHITECTURE -->
-    <div class="project-section">
-      <h2>System Architecture</h2>
-      <p>
-        End-to-end Retrieval-Augmented Generation pipeline designed
-        for scalable, grounded document intelligence.
-      </p>
+    <div class="rag-section-header">
+      <span class="rag-eyebrow">Problem</span>
+      <h2>Challenges with Long-Form Document Understanding</h2>
     </div>
 
-    <div class="project-image-block">
-      <img src="assets/rag-architecture.png"
-           alt="RAG Architecture Diagram"
-           class="project-image-uniform">
+    <div class="rag-problem-grid">
+
+      <!-- Card 1 -->
+      <div class="rag-problem-card">
+        <div class="rag-card-header">
+          <div class="rag-icon">⚠️</div>
+          <div>
+            <h3>LLM Limitations</h3>
+            <!-- <div class="rag-bullets">
+              <span>Hallucinations</span>
+              <span>No citations</span>
+            </div> -->
+          </div>
+        </div>
+
+        <p>
+          LLMs often produce inaccurate answers when processing lengthy documents
+          without proper citation or grounding.
+        </p>
+
+        <div class="rag-tags">
+          <span>Hallucinations</span>
+          <span>No citations</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="rag-problem-card">
+        <div class="rag-card-header">
+          <div class="rag-icon">🔍</div>
+          <div>
+            <h3>Search Gaps</h3>
+            <!-- <div class="rag-bullets">
+              <span>Keyword mismatch</span>
+              <span>Lost context</span>
+            </div> -->
+          </div>
+        </div>
+
+        <p>
+          Traditional keyword-based search fails to preserve semantic meaning,
+          missing relevant passages in large PDFs.
+        </p>
+
+        <div class="rag-tags">
+          <span>Keyword mismatch</span>
+          <span>Lost context</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEM ARCHITECTURE -->
+<section class="rag-architecture">
+  <div class="container">
+
+    <div class="rag-section-header">
+      <span class="rag-eyebrow">System Architecture</span>
+      <h2>End-to-End RAG Pipeline</h2>
     </div>
 
-    <!-- PROBLEM -->
-    <div class="project-section">
-      <h2>Problem</h2>
-      <p>
-        LLMs hallucinate when answering questions about long-form documents.
-        Traditional keyword search fails to preserve semantic intent.
-      </p>
-    </div>
+    <div class="rag-arch-flow">
 
-    <!-- SOLUTION -->
-    <div class="project-section">
-      <h2>Solution</h2>
-      <p>
-        Designed a production-ready RAG system that ingests PDFs,
-        generates vector embeddings, performs similarity search,
-        and injects relevant context into LLM prompts to ensure grounded responses.
-      </p>
-    </div>
+      <!-- PDF DOCUMENTS -->
+      <div class="rag-arch-group">
+        
+        <h5 class="rag-arch-group-title">PDF Documents</h5>
 
-    <!-- PIPELINE -->
-    <div class="project-section">
-      <h2>Pipeline Flow</h2>
-      <ul>
-        <li>PDF upload → async ingestion</li>
-        <li>Recursive chunking with overlap</li>
-        <li>Embedding generation (HuggingFace)</li>
-        <li>Chroma vector indexing</li>
-        <li>Top-k semantic retrieval</li>
-        <li>Context-aware prompt injection</li>
-        <li>Streaming response generation</li>
-      </ul>
-    </div>
+        <div class="rag-arch-outside-icon">
+          <i data-lucide="file-text"></i>
+        </div>
 
-    <!-- ENGINEERING HIGHLIGHTS -->
-    <div class="project-section">
-      <h2>Engineering Highlights</h2>
-      <ul>
-        <li>Optimized chunk size for recall vs latency tradeoff</li>
-        <li>Reduced hallucination via metadata filtering</li>
-        <li>Stateless FastAPI layer for horizontal scaling</li>
-        <li>Dockerized for reproducible deployment</li>
-      </ul>
-    </div>
+        <div class="rag-arch-card">
+          <strong>Upload</strong>
+          <p>(2–400 pages)</p>
+        </div>
 
-    <!-- BUTTONS -->
-    <div class="project-links">
-      <a href="https://paragghosh99.github.io/rag_pdf_chat/" 
-         target="_blank" 
-         class="resume-btn">
-        Live Demo
-      </a>
+      </div>
 
-      <a href="https://github.com/paragghosh99/rag_pdf_chat" 
-         target="_blank" 
-         class="resume-btn" 
-         style="margin-left:16px; background:#374151;">
-        View Source
-      </a>
+      <div class="rag-arch-arrow">→</div>
+
+      <!-- PROCESSING -->
+      <div class="rag-arch-group">
+        <h5 class="rag-arch-group-title">Processing</h5>
+
+        <div class="rag-arch-outside-icon">
+          <i data-lucide="layers"></i>
+        </div>
+
+        <div class="rag-arch-card small">
+          Chunking + Overlap
+        </div>
+
+        <div class="rag-arch-card highlight">
+          <strong>Embedding</strong>
+          <p>(HuggingFace)</p>
+        </div>
+      </div>
+
+      <div class="rag-arch-arrow">→</div>
+
+      <!-- VECTOR DB -->
+      <div class="rag-arch-group">
+        <h5 class="rag-arch-group-title">Vector DB</h5>
+
+        <div class="rag-arch-outside-icon">
+          <i data-lucide="database"></i>
+        </div>
+
+        <div class="rag-arch-card">
+          Chroma DB
+        </div>
+      </div>
+
+      <div class="rag-arch-arrow">→</div>
+
+      <!-- RETRIEVAL -->
+      <div class="rag-arch-group">
+        <h5 class="rag-arch-group-title">Retrieval</h5>
+
+        <div class="rag-arch-outside-icon">
+          <i data-lucide="search"></i>
+        </div>
+
+        <div class="rag-arch-card highlight">
+          Top-K Search
+        </div>
+      </div>
+
+      <div class="rag-arch-arrow">→</div>
+
+      <!-- LLM -->
+      <div class="rag-arch-group">
+        <h5 class="rag-arch-group-title">LLM</h5>
+
+        <div class="rag-arch-outside-icon">
+          <i data-lucide="cpu"></i>
+        </div>
+
+        <div class="rag-arch-card small">
+          Local: flan-t5-small
+        </div>
+
+        <div class="rag-arch-card small">
+          Cloud: OpenAI API
+        </div>
+
+        <div class="rag-arch-card toggle">
+          .env Switch
+        </div>
+      </div>
+
     </div>
 
   </div>
 </section>
+
+<!-- PERFORMANCE METRICS -->
+<section class="rag-metrics">
+  <div class="container">
+
+    <div class="rag-section-header">
+      <span class="rag-eyebrow">Performance</span>
+      <h2>Performance & Metrics</h2>
+    </div>
+
+    <div class="rag-metrics-grid">
+
+      <div class="rag-metric-card">
+        <div class="rag-metric-icon">⏱</div>
+        <div class="rag-metric-content">
+          <h3>19–20s</h3>
+          <p>Embedding Time</p>
+        </div>
+      </div>
+
+      <div class="rag-metric-arrow">→</div>
+
+      <div class="rag-metric-card">
+        <div class="rag-metric-icon">⚡</div>
+        <div class="rag-metric-content">
+          <h3>9–14s</h3>
+          <p>Response Time</p>
+        </div>
+      </div>
+
+      <div class="rag-metric-arrow">→</div>
+
+      <div class="rag-metric-card">
+        <div class="rag-metric-icon">📄</div>
+        <div class="rag-metric-content">
+          <h3>20</h3>
+          <p>PDFs Tested</p>
+        </div>
+      </div>
+
+      <div class="rag-metric-arrow">→</div>
+
+      <div class="rag-metric-card">
+        <div class="rag-metric-icon">☁</div>
+        <div class="rag-metric-content">
+          <h3>Cloud Ready</h3>
+          <p>Render Deployment</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="rag-tech">
+  <div class="container">
+
+    <div class="rag-section-header">
+      <span class="rag-eyebrow">Tech Stack</span>
+      <h2>Technologies Used</h2>
+    </div>
+
+    <div class="rag-tech-grid">
+
+      <div class="rag-tech-pill">
+        <i data-lucide="code"></i>
+        <span>Python</span>
+      </div>
+
+      <div class="rag-tech-pill">
+        <i data-lucide="brain"></i>
+        <span>HuggingFace</span>
+      </div>
+
+      <div class="rag-tech-pill">
+        <i data-lucide="database"></i>
+        <span>Chroma DB</span>
+      </div>
+
+      <div class="rag-tech-pill">
+        <i data-lucide="zap"></i>
+        <span>FastAPI</span>
+      </div>
+
+      <div class="rag-tech-pill">
+        <i data-lucide="globe"></i>
+        <span>OpenAI API</span>
+      </div>
+
+      <div class="rag-tech-pill">
+        <i data-lucide="cloud"></i>
+        <span>Render</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<div class="project-links">
+
+  <a href="https://paragghosh99.github.io/rag_pdf_chat/" 
+     target="_blank" 
+     class="rag-btn rag-btn-primary">
+    Live Demo
+  </a>
+
+  <a href="https://github.com/paragghosh99/rag_pdf_chat" 
+     target="_blank" 
+     class="rag-btn rag-btn-secondary">
+    View Source
+  </a>
+
+</div>
 
 <footer class="footer">
   <div class="container">
@@ -142,3 +392,7 @@
 
 </body>
 </html>
+
+<script>
+  lucide.createIcons();
+</script>

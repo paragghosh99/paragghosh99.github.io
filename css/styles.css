@@ -549,6 +549,7 @@ body {
 
 .project-hero {
   padding: 110px 0 30px;
+  background: #F3F5F8;
 }
 
 .project-hero h1 {
@@ -570,13 +571,13 @@ body {
 }
 
 .project-image-block {
-  margin: 40px 0 40px;
+  margin: 60px 0 0;
 }
 
 /* Single readable column */
 .project-hero .container,
 .project-content .container {
-  max-width: 820px;
+  max-width: 1160px;
 }
 
 /* Sections */
@@ -618,13 +619,583 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 14px;
-  box-shadow:
-    0 2px 8px rgba(0,0,0,0.05),
-    0 28px 70px rgba(0,0,0,0.08);
+  border-radius: 0;
+  box-shadow: none;
 }
 
 /* Buttons */
 .project-links {
   margin-top: 100px;
+}
+
+/* ===============================
+   RAG PAGE – HERO
+================================ */
+
+.rag-hero {
+  padding: 60px 0px 0px;
+}
+
+.rag-hero-container {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.rag-hero-left h1 {
+  font-size: 58px;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  color: #111827;
+}
+
+.rag-highlight {
+  color: #2563eb;
+}
+
+.rag-subtitle {
+  font-size: 21px;
+  line-height: 1.6;
+  color: #4b5563;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+/* ===============================
+   RAG STATS (Hero Metrics)
+================================ */
+
+.rag-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #eef1f5;
+  padding: 16px 28px;
+  border-radius: 999px;
+  width: fit-content;
+  margin-top: 28px;
+  box-shadow: 
+    0 2px 8px rgba(0,0,0,0.04),
+    0 10px 24px rgba(0,0,0,0.06);
+}
+
+.rag-stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #111827;
+}
+
+.rag-stat strong {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.rag-stat img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.rag-icon {
+  width: 20px;
+  height: 20px;
+  stroke: #2563eb;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  flex-shrink: 0;
+}
+
+.rag-divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(17, 24, 39, 0.12);
+}
+
+.rag-divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(0,0,0,0.15);
+}
+
+.rag-hero-right {
+  display: flex;
+  justify-content: center;
+}
+
+.rag-hero-right img {
+  width: 100%;
+  max-width: 760px;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* ===============================
+   RAG PAGE – PROBLEM SECTION
+================================ */
+
+.rag-problem-section {
+  padding: 40px;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(37,99,235,0.05), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(245,158,11,0.05), transparent 40%),
+    #f8fafc;
+}
+
+.rag-section-header h2 {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 70px;
+}
+
+.rag-section-header h2 span {
+  font-weight: 700;
+  border-bottom: 3px solid #2563eb;
+  line-height: 1;
+}
+
+.rag-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin-bottom: 16px;
+}
+
+.rag-problem-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.rag-problem-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 34px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rag-problem-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+}
+
+.rag-card-header {
+  display: flex;
+  align-items: center;   /* THIS is the key */
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.rag-card-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;      /* remove extra vertical breathing */
+  margin: 0;
+}
+
+.rag-card-header .rag-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.rag-icon {
+  font-size: 24px;
+  width: 20px;
+  height: 20px;
+  stroke: #2563eb;
+}
+
+/* .rag-bullets {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  color: #4a5568;
+} */
+
+.rag-problem-card p {
+  font-size: 15px;
+  color: #5f6c7b;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.rag-problem-card:first-child .rag-icon {
+  background: rgba(245, 158, 11, 0.15);
+}
+
+.rag-problem-card:last-child .rag-icon {
+  background: rgba(37, 99, 235, 0.12);
+}
+
+.rag-tags {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.rag-tags span {
+  background: #f2f5fa;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: #4a5568;
+}
+
+.rag-section-divider {
+  margin: 70px 0 50px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0,0,0,0.15),
+    transparent
+  );
+  opacity: 0.4;
+}
+
+/* ===============================
+   RAG – SYSTEM ARCHITECTURE
+================================ */
+
+.rag-architecture {
+  padding: 100px 0 140px;
+}
+
+.rag-arch-grid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(11, auto);
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.rag-arch-step {
+  background: #ffffff;
+  padding: 22px 26px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  min-width: 170px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rag-arch-step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.rag-arch-step h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.rag-arch-step p {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.rag-arch-arrow {
+  font-size: 22px;
+  color: #94a3b8;
+}
+
+.rag-arch-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.rag-arch-flow {
+  margin-top: 60px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 24px;     /* was 36px */
+  flex-wrap: nowrap;
+}
+
+.rag-arch-group {
+  display: flex;
+  flex: 0 0 auto;   /* prevents compression */
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 18px;
+  border-radius: 22px;
+  background: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.06);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  min-width: 200px;
+}
+
+.rag-arch-group:hover {
+  box-shadow: 0 14px 34px rgba(0,0,0,0.06);
+  transform: translateY(-4px);
+}
+
+.rag-arch-group-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+.rag-arch-card {
+  background: #f9fafb;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  text-align: center;
+  min-width: 140px;
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rag-arch-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+.rag-arch-card.small {
+  font-size: 13px;
+  padding: 10px 14px;
+}
+
+.rag-arch-card.highlight {
+  border: 1px solid rgba(37,99,235,0.25);
+  background: #f8fbff;
+}
+
+.rag-arch-card.toggle {
+  background: #eef2ff;
+  font-size: 13px;
+}
+
+.rag-arch-arrow {
+  font-size: 22px;
+  color: #94a3b8;
+  margin-top: 50px;
+}
+
+.rag-arch-outside-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: #eef2ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.rag-arch-outside-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: #2563eb;
+  stroke-width: 1.8;
+}
+
+/* ===============================
+   RAG – PERFORMANCE METRICS
+================================ */
+
+.rag-metrics {
+  padding: 80px 0 100px;
+  background: linear-gradient(
+    to bottom,
+    #f8fafc,
+    #f1f5f9
+  );
+}
+
+.rag-metrics-grid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.rag-metric-card {
+  background: #ffffff;
+  padding: 22px 28px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 220px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rag-metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.rag-metric-icon {
+  font-size: 22px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rag-metric-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 2px;
+  color: #111827;
+}
+
+.rag-metric-content p {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.rag-metric-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 0px;
+  color: #111827;
+}
+
+.rag-metric-card p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.rag-metric-arrow {
+  font-size: 24px;
+  color: #94a3b8;
+}
+
+/* ===============================
+   RAG – TECH STACK
+================================ */
+
+.rag-tech {
+  padding: 60px 0 50px;
+  background: #ffffff;
+}
+
+.rag-tech-grid {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 22px;
+}
+
+.rag-tech-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: #f3f4f6;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+  border: 1px solid rgba(17, 24, 39, 0.06);
+  transition: all 0.25s ease;
+}
+
+.rag-tech-pill:hover {
+  background: #eef2ff;
+  border-color: rgba(37, 99, 235, 0.25);
+  transform: translateY(-2px);
+}
+
+.rag-tech-pill svg {
+  width: 16px;
+  height: 16px;
+  stroke: #2563eb;
+  stroke-width: 1.8;
+}
+
+/* ===============================
+   RAG – CTA BUTTONS
+================================ */
+
+.project-links {
+  margin-top: 50px;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.rag-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+  min-width: 160px;
+}
+
+/* Primary */
+
+.rag-btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
+}
+
+.rag-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(37, 99, 235, 0.35);
+}
+
+/* Secondary */
+
+.rag-btn-secondary {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+}
+
+.rag-btn-secondary:hover {
+  background: #f3f4f6;
+  transform: translateY(-3px);
 }
