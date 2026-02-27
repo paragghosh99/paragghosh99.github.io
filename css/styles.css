@@ -25,7 +25,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
+  z-index: 3000;
 
   background: transparent;
   transition: background 0.3s ease, box-shadow 0.3s ease;
@@ -637,7 +637,7 @@ body {
 ================================ */
 
 .rag-hero {
-  padding: 60px 0px 0px;
+  padding: 120px 0px 0px;
 }
 
 .rag-hero-container {
@@ -1574,7 +1574,6 @@ html, body {
     transition: transform 0.35s ease;
     box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     z-index: 999;
-    padding-top: 90px;
   }
 
   .mobile-menu a {
@@ -1664,3 +1663,12 @@ html, body {
     order: 5;
   }
 } */
+
+.project-page .nav {
+  z-index: 5000;
+}
+
+.project-page .mobile-menu {
+  z-index: 4000;
+  /* top: 70px; */
+}

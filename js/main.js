@@ -26,6 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateNavState() {
     if (!nav) return;
 
+    // If already forced (sub-page), do nothing
+    if (nav.classList.contains("scrolled") && !hero) return;
+
     if (window.scrollY > 0) {
       nav.classList.add("scrolled");
     } else {
