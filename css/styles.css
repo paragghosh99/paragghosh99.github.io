@@ -1672,3 +1672,9 @@ html, body {
   z-index: 4000;
   /* top: 70px; */
 }
+
+@media (max-width: 1200px) {
+  .rag-metric-arrow {
+    display: none;
+  }
+}
