@@ -31,6 +31,10 @@ body {
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
+.nav {
+  z-index: 2000;
+}
+
 .nav-left,
 .nav-right {
   display: flex;
@@ -109,7 +113,9 @@ body {
   font-weight: 600;
   letter-spacing: -0.02em;
   max-width: 900px;
-  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  text-shadow: 
+    0 10px 40px rgba(0,0,0,0.6),
+    0 0 1px rgba(0,0,0,0.4);
 }
 
 .hero-primary {
@@ -517,7 +523,10 @@ body {
 }
 
 .contact-email {
-  display: inline-block;
+  display: inline-flex;              /* changed */
+  align-items: center;               /* new */
+  gap: 8px;                          /* new */
+
   font-size: 30px;
   font-weight: 600;
   text-decoration: none;
@@ -532,9 +541,13 @@ body {
   border-color: rgba(17, 24, 39, 0.4);
 }
 
-.contact-subtext {
-  font-size: 16px;
-  color: #6b7280;
+.arrow-up {
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+
+.contact-email:hover .arrow-up {
+  transform: translate(3px, -3px);
 }
 
 .projects,
@@ -1418,3 +1431,236 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
 }
+
+/* TABLET FIX */
+@media (max-width: 1200px) {
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .rag-hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .rag-arch-flow {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .rag-arch-arrow {
+    display: none;
+  }
+
+  .rag-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+}
+
+/* MOBILE FIX (≤ 768px) */
+@media (max-width: 768px) {
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .rag-hero-left h1 {
+    font-size: 38px;
+  }
+
+  .rag-subtitle {
+    font-size: 16px;
+  }
+
+  .rag-stats {
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .rag-divider {
+    display: none;
+  }
+
+  .rag-problem-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rag-arch-flow {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .rag-arch-group {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .rag-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rag-metric-arrow {
+    display: none;
+  }
+
+  .project-links {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+}
+
+/* HORIZONTAL OVERFLOW */
+html, body {
+  overflow-x: hidden;
+}
+
+/* BURGER STYLING */
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2100
+}
+
+.nav-burger span {
+  width: 22px;
+  height: 2px;
+  background: #111;
+  transition: all 0.3s ease;
+}
+
+/* MOBILE MENU BASE STATE */
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  .nav-left,
+  .nav-right {
+    display: none;
+  }
+
+  .nav {
+    justify-content: space-between;
+    padding: 16px 20px;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 20px;
+    transform: translateY(-100%);
+    transition: transform 0.35s ease;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    z-index: 999;
+    padding-top: 90px;
+  }
+
+  .mobile-menu a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .mobile-menu.active {
+    transform: translateY(0);
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .about-image-wrapper {
+    width: 260px;
+    height: 260px;
+  }
+
+  .about-image {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 2;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .about-circle {
+    width: 220px;
+    height: 220px;
+  }
+
+  /* ABOUT GRID COLLAPSE */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-grid > div {
+    padding-right: 0;
+  }
+
+  .about-grid > div:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    padding-bottom: 20px;
+  }
+
+  /* CONTACT MOBILE SCALE */
+  .contact-content h2 {
+    font-size: 32px;
+  }
+
+  .contact-email {
+    font-size: 20px;
+    word-break: break-word;
+  }
+}
+
+.nav:not(.scrolled) .nav-burger span {
+  background: #ffffff;
+}
+
+.nav.scrolled .nav-burger span {
+  background: #111;
+}
+
+@media (max-width: 768px) {
+  .nav.scrolled .nav-burger {
+    display: flex;
+  }
+}
+
+/* @media (max-width: 768px) {
+  .resume-btn {
+    order: 5;
+  }
+} */

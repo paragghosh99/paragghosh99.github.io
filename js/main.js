@@ -97,4 +97,36 @@ document.addEventListener("DOMContentLoaded", () => {
   sections.forEach((section) => {
     sectionObserver.observe(section);
   });
+
+  /* -------------------------
+    MOBILE NAV TOGGLE
+  ------------------------- */
+
+  const burger = document.querySelector(".nav-burger");
+  const mobileMenu = document.querySelector(".mobile-menu");
+
+  if (burger && mobileMenu) {
+
+    burger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle("active");
+    });
+
+    // Close if clicking outside menu AND outside burger
+    document.addEventListener("click", (e) => {
+      if (
+        mobileMenu.classList.contains("active") &&
+        !mobileMenu.contains(e.target) &&
+        !burger.contains(e.target)
+      ) {
+        mobileMenu.classList.remove("active");
+      }
+    });
+
+    // Close on scroll
+    window.addEventListener("scroll", () => {
+      mobileMenu.classList.remove("active");
+    });
+
+  }
 });
