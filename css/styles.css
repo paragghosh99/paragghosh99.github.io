@@ -1433,7 +1433,7 @@ body {
 }
 
 /* TABLET FIX */
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
 
   .container {
     padding: 0 24px;
@@ -1673,7 +1673,7 @@ html, body {
   /* top: 70px; */
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .rag-metric-arrow {
     display: none;
   }
